@@ -2,7 +2,7 @@
 
 ## Overview
 
-This plugin is an EXTREMELY simple inventory. It's primary purpose is to track ownership of items; the ownership of items has no coded functionality such as limiting the equipping of items, allowing customization of names or descriptions, etc.
+This plugin is an EXTREMELY simple inventory. Its primary purpose is to track ownership of items; the ownership of items has no coded functionality such as limiting the equipping of items, allowing customization of names or descriptions, etc.
 
 It contains the following features:
 
@@ -13,9 +13,33 @@ It contains the following features:
 * Equipping and unequipping items (one at a time)
 * The ability to give items you own to other characters.
 
+I have no plans to create a more complicated version of this or add any functionality, but you are welcome to fork the code and make your own changes as long as you credit Tat @ AresCentral.
+
 ## Installation
 
 In the game, run `plugin/install <URL>`.
+
+### Web Portal
+
+Web Portal integration is optional. This will add a tab to the 'System' section of the character page which will list a character's items.
+
+In aresmush/plugins/profile/custom_char_fields.rb, in `def self.get_fields_for_viewing` add:
+
+> items: Simpleinventory.get_items(char)
+
+In /app/templates/components/profile_custom_tabs.hbs, add:
+
+>{{#if char.custom.items}}
+>   \<li><a data-toggle="tab" href="#systemitems">Items\</a>\</li>
+>{{/if}}
+
+In /app/templates/components/profile_custom.hbs, add:
+
+> {{#if char.custom.items}}
+>\<div id="systemitems" class="tab-pane fade">
+>  \<CharItems @char={{char}} />
+>\</div>
+>{{/if}}
 
 ## Configuration
 In simple_inventory.yml:
@@ -32,25 +56,7 @@ Items are built via configuration options. The item's name is the primary value,
 `available:` 	true/false 	- Is the item available for automatic purchase via item/buy?
 `cost:` 	 	How many Luck Points does the item cost?
 
-## Web Portal
 
-In aresmush/plugins/profile/custom_char_fields.rb, in `def self.get_fields_for_viewing` add:
-
-> items: Simpleinventory.get_items(char)
-
-In /app/templates/components/profile_custom_tabs.hbs, add:
-
->{{#if char.custom.items}}
-    <li><a data-toggle="tab" href="#systemitems">Items</a></li>
-{{/if}}
-
-In /app/templates/components/profile_custom.hbs, add:
-
-> {{#if char.custom.items}}
-<div id="systemitems" class="tab-pane fade">
-  <CharItems @char={{char}} />
-</div>
-{{/if}}
 
 
 
