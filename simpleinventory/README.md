@@ -2,9 +2,11 @@
 
 ## Overview
 
-This plugin is an EXTREMELY simple inventory. Its primary purpose is to track ownership of items; the ownership of items has no coded functionality such as limiting the equipping of items, allowing customization of names or descriptions, etc.
+This plugin is an EXTREMELY simple inventory. Its primary purpose is to track ownership of items.
 
-It contains the following features:
+The ownership of items **does not have any additional coded functionality** such as integrating weapons and armor with FS3, allowing customization of names or descriptions, crafting, or other functionality. It is purely informational.
+
+The plugin contains the following features:
 
 * The 'creation' of items in the system via configuration file. Items can have a name, a description, and a cost.
 * The option to set items 'buyable' using luck.
@@ -52,8 +54,11 @@ In items.yml:
 Items are built via configuration options. The item's name is the primary value, and it MUST be in Ruby titlecase. IE: `Sword Of Awesome` instead of `Sword of Awesome`.
 
 `name:` 	Item name. This is display only and does NOT need to be in ruby-version titlecase.
+
 `desc:`		Item description. It's a good idea to enclose these in double quotes "Desc" to prevent any weirdness with the use of apostrophes in descriptions. Line breaks can be created with \n
+
 `available:` 	true/false 	- Is the item available for automatic purchase via item/buy?
+
 `cost:` 	 	How many Luck Points does the item cost?
 
 
