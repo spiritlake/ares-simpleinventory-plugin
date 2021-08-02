@@ -23,24 +23,24 @@ In the game, run `plugin/install <URL>`.
 
 ### Web Portal
 
-Web Portal integration is optional. This will add a tab to the 'System' section of the character page which will list a character's items.
+Web Portal integration is optional. This will add a tab to the 'System' section of the character page which will list a character's items. These changes are only in custom hook files and should not cause merge conflicts.
 
-In aresmush/plugins/profile/custom_char_fields.rb, in `def self.get_fields_for_viewing` add:
+In **aresmush/plugins/profile/custom_char_fields.rb**, in `def self.get_fields_for_viewing` add:
 
 > items: Simpleinventory.get_items(char)
 
-In /app/templates/components/profile_custom_tabs.hbs, add:
+In **ares-webportal/app/templates/components/profile_custom_tabs.hbs**, add:
 
->{{#if char.custom.items}}
->   \<li><a data-toggle="tab" href="#systemitems">Items\</a>\</li>
+>{{#if char.custom.items}}<br>
+>   \<li>\<a data-toggle="tab" href="#systemitems">Items\</a>\</li><br>
 >{{/if}}
 
-In /app/templates/components/profile_custom.hbs, add:
+In **ares-webportal/app/templates/components/profile_custom.hbs**, add:
 
-> {{#if char.custom.items}}
->\<div id="systemitems" class="tab-pane fade">
->  \<CharItems @char={{char}} />
->\</div>
+> {{#if char.custom.items}}<br>
+>\<div id="systemitems" class="tab-pane fade"><br>
+>  \<CharItems @char={{char}} /><br>
+>\</div><br>
 >{{/if}}
 
 ## Configuration
