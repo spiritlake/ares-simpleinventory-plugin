@@ -1,0 +1,7 @@
+---
+items:
+  Sword Of Awesome:
+    available: true
+    cost: 5
+    name: Sword of Awesome
+    desc: "An awesome silver sword."
