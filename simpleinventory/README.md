@@ -37,11 +37,12 @@ In **ares-webportal/app/templates/components/profile_custom_tabs.hbs**, add:
 
 In **ares-webportal/app/templates/components/profile_custom.hbs**, add:
 
-> {{#if char.custom.items}}<br>
->\<div id="systemitems" class="tab-pane fade"><br>
->  \<CharItems @char={{char}} /><br>
->\</div><br>
->{{/if}}
+>\<div id="systemitems" class="tab-pane fade">
+>  {{#each char.custom.items as |item|}}
+>   \<p>\<b>{{item.name}}\</b>\<br>
+>     {{{ansi-format text=item.desc}}}\</p>
+>  {{/each}}
+>\</div>
 
 ## Configuration
 In simple_inventory.yml:
