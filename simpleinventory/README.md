@@ -37,11 +37,11 @@ In **ares-webportal/app/templates/components/profile_custom_tabs.hbs**, add:
 
 In **ares-webportal/app/templates/components/profile_custom.hbs**, add:
 
->\<div id="systemitems" class="tab-pane fade">
->  {{#each char.custom.items as |item|}}
->   \<p>\<b>{{item.name}}\</b>\<br>
->     {{{ansi-format text=item.desc}}}\</p>
->  {{/each}}
+>\<div id="systemitems" class="tab-pane fade"><br>
+>  {{#each char.custom.items as |item|}}<br>
+>   \<p>\<b>{{item.name}}\</b>\<br><br>
+>     {{{ansi-format text=item.desc}}}\</p><br>
+>  {{/each}}<br>
 >\</div>
 
 ## Configuration
