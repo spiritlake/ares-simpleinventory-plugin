@@ -19,7 +19,7 @@ I have no plans to create a more complicated version of this or add any function
 
 ## Installation
 
-In the game, run `plugin/install <URL>`.
+In the game, run `plugin/install https://github.com/spiritlake/ares-simpleinventory-plugin`.
 
 ### Web Portal
 
