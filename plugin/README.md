@@ -56,7 +56,7 @@ Items are built via configuration options. The item's name is the primary value,
 
 `name:` 	Item name. This is display only and does NOT need to be in ruby-version titlecase.
 
-`desc:`		Item description. It's a good idea to enclose these in double quotes "Desc" to prevent any weirdness with the use of apostrophes in descriptions. Line breaks can be created with \n
+`desc:`		Item description. It's a good idea to enclose these in double quotes "Desc" to prevent any weirdness with the use of apostrophes in descriptions. Line breaks can be created with `\n`.
 
 `available:` 	true/false 	- Is the item available for automatic purchase via item/buy?
 
